@@ -64,7 +64,8 @@ const std::string scribeversion("2.2");
     time(&now);                                                         \
     ctime_r(&now, dbgtime);                                             \
     dbgtime[24] = '\0';                                                 \
-    fprintf(stderr,"[%s] " #format_string " \n", dbgtime,##__VA_ARGS__); \
+    fprintf(stdout,"[%s] " #format_string " \n", dbgtime,##__VA_ARGS__); \
+    fflush(stdout); \
   }
 
 
